@@ -2,8 +2,8 @@ import esphome.codegen as cg
 import esphome.config_validation as cv
 from esphome.const import CONF_COMPONENTS, CONF_ID, CONF_LAMBDA
 
-custom_component_ns = cg.esphome_ns.namespace("custom_component")
-CustomComponentConstructor = custom_component_ns.class_("CustomComponentConstructor")
+custom_component_ns = cg.esphome_ns.namespace("cc1101")
+CustomComponentConstructor = custom_component_ns.class_("CC1101Component")
 
 MULTI_CONF = True
 CONFIG_SCHEMA = cv.Schema(

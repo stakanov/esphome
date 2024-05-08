@@ -6,11 +6,11 @@
 #include <vector>
 
 namespace esphome {
-namespace custom_component {
+namespace cc1101 {
 
-class CustomComponentConstructor {
+class CC1101Component {
  public:
-  CustomComponentConstructor(const std::function<std::vector<Component *>()> &init) {
+  CC1101Component(const std::function<std::vector<Component *>()> &init) {
     this->components_ = init();
 
     for (auto *comp : this->components_) {
@@ -24,5 +24,5 @@ class CustomComponentConstructor {
   std::vector<Component *> components_;
 };
 
-}  // namespace custom_component
+}  // namespace cc1101
 }  // namespace esphome
