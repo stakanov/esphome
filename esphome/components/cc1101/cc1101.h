@@ -7,7 +7,7 @@
 namespace esphome {
 namespace cc1101 {
 
-class CC1101Component : public button::Button, public Component {
+class CC1101Button : public button::Button, public Component {
  public:
   
   void set_module(int sclk, int miso, int mosi, int cs, int gdo0, int gdo2, uint32_t bitrate, float frequency, TX_DBM txPower, unsigned long dataRate, MOD_FORMAT modulation, int repeat /*, int delayTime , uint8_t buffer[]*/){};

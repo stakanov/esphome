@@ -15,7 +15,7 @@ unsigned long 	dataRate;
 MOD_FORMAT 		modulation;
 //uint8_t			buffer[];
 
-void CC1101Component::set_module(int sclk, int miso, int mosi, int cs, int gdo0, int gdo2, uint32_t bitrate, float frequency, TX_DBM txPower, unsigned long dataRate, MOD_FORMAT modulation, int repeat  /*, int delayTime, uint8_t buffer[]*/){
+void CC1101Button::set_module(int sclk, int miso, int mosi, int cs, int gdo0, int gdo2, uint32_t bitrate, float frequency, TX_DBM txPower, unsigned long dataRate, MOD_FORMAT modulation, int repeat  /*, int delayTime, uint8_t buffer[]*/){
 	//SPI_SCK 			= sclk;	//board or mcu specific
 	//SPI_MISO 			= miso; //board or mcu specific
 	//SPI_MOSI 			= mosi; //board or mcu specific
@@ -32,12 +32,12 @@ void CC1101Component::set_module(int sclk, int miso, int mosi, int cs, int gdo0,
 	//buffer = buffer;
 }
 
-void CC1101Component::dump_config() {
+void CC1101Button::dump_config() {
   LOG_BUTTON("", "CC1101 Component", this);
   ESP_LOGCONFIG(TAG, "  CC1101 configuration: ");
 }
 
-void CC1101Component::press_action() {
+void CC1101Button::press_action() {
   ESP_LOGI(TAG, "Sending Buffer...");
   uint8_t buffer[] = {0b11111100, 0b10010010, 0b01001001, 0b01101101, 0b10110110, 0b01011001, 0b00100100, 0b10010010, 0b11001011, 0b01100100, 0b10110010, 0b01011001, 0b00100101, 0b10010010, 0b01001001, 0b01100100, 0b10110010, 0b01011001, 0b01100100, 0b10010010, 0b01000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000, 0b00000000};
 
