@@ -21,6 +21,11 @@ cc1101_ns = cg.esphome_ns.namespace("cc1101")
 
 CC1101Button = cc1101_ns.class_("CC1101Button", button.Button, cg.Component)
 
+CONFIG_SCHEMA = button.button_schema(
+    CC1101Button
+).extend(cv.COMPONENT_SCHEMA)
+
+"""
 DEPENDENCIES = []
 
 CONFIG_SCHEMA = cv.All(
@@ -46,11 +51,13 @@ CONFIG_SCHEMA = cv.All(
     ),
     #cv.only_with_arduino,
 )
+"""
 
-
-def to_code(config):
+async def to_code(config):
     var = cg.new_Pvariable(config[CONF_ID])
-
+    await cg.register_component(var, config)
+    await button.register_button(var, config)    
+    """
     yield cg.add(var.set_module(
         config[CONF_GPIO_SCLK],
         config[CONF_GPIO_MISO], 
@@ -67,3 +74,5 @@ def to_code(config):
             ))
     yield cg.register_component(var, config)
     yield button.register_button(var, config)
+
+    """
