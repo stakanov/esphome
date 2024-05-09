@@ -1,28 +1,38 @@
 #pragma once
 
 #include "esphome/core/component.h"
-#include "esphome/core/application.h"
-
-#include <vector>
+#include "esphome/components/button/button.h"
+#include "./CC1101_ESP_Arduino/CC1101_ESP_Arduino.h"
 
 namespace esphome {
 namespace cc1101 {
 
-class CC1101Component {
+class CC1101Component : public button::Button, public Component {
  public:
-  CC1101Component(const std::function<std::vector<Component *>()> &init) {
-    this->components_ = init();
+  
+  void set_module(int sclk, int miso, int mosi, int cs, int gdo0, int gdo2, uint32_t bitrate, float frequency, TX_DBM txPower, unsigned long dataRate, MOD_FORMAT modulation, int repeat /*, int delayTime , uint8_t buffer[]*/){};
 
-    for (auto *comp : this->components_) {
-      App.register_component(comp);
-    }
-  }
-
-  Component *get_component(int i) const { return this->components_[i]; }
+  void dump_config() override;
 
  protected:
-  std::vector<Component *> components_;
+  void press_action() override;
+
+  int gpio_sclk;
+  int gpio_miso;
+  int gpio_mosi;
+  int gpio_cs;
+  int gpio_gdo0;
+  int gpio_gdo2;
+  uint32_t bitrate;
+  float frequency;
+  TX_DBM txPower;
+  unsigned long dataRate;
+  MOD_FORMAT modulation;
+  int repeat;
+  //int delayTime;
+  //uint8_t buffer[];
 };
 
 }  // namespace cc1101
 }  // namespace esphome
+
