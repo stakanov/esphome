@@ -25,6 +25,8 @@ CONFIG_SCHEMA = button.button_schema(
     CC1101Button
 ).extend(cv.COMPONENT_SCHEMA)
 
+DEPENDENCIES = ["button"]
+
 """
 DEPENDENCIES = []
 
