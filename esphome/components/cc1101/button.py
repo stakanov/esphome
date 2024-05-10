@@ -21,7 +21,7 @@ cc1101_ns = cg.esphome_ns.namespace("cc1101")
 
 CC1101Button = cc1101_ns.class_("CC1101Button", button.Button, cg.Component)
 
-# DEPENDENCIES = []
+DEPENDENCIES = ["spi"]
 
 CONFIG_SCHEMA = cv.All(
     button.button_schema(CC1101Button)
