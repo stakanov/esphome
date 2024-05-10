@@ -19,7 +19,7 @@ CONF_REPEAT    = "repeat"
 
 cc1101_ns = cg.esphome_ns.namespace("cc1101")
 
-CC1101Button = cc1101_ns.class_("CC1101Button", button.Button, cg.Component)
+CC1101Button = cc1101_ns.class_("CC1101Button", button.Button, cg.Component, spi.SPIDevice)
 
 DEPENDENCIES = ["spi"]
 
