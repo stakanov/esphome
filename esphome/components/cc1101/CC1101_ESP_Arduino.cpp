@@ -1,3 +1,4 @@
+#pragma once
 /*
  *  CC1101.cpp - CC1101 module library
  *  Copyright (c) 2010 Michael.
