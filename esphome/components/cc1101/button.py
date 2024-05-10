@@ -41,7 +41,7 @@ CONFIG_SCHEMA = cv.All(
                 cv.Required(CONF_TX_POWER  ): cv.int_,
                 cv.Required(CONF_DATARATE  ): cv.float_,
                 cv.Required(CONF_MODULATION): cv.int_,
-                cv.Required(CONF_REPEAT    ): cv.int,
+                cv.Required(CONF_REPEAT    ): cv.int_,
             }
         ),
     ),
