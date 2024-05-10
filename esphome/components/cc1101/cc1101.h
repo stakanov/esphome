@@ -2,7 +2,7 @@
 
 #include "esphome/core/component.h"
 #include "esphome/components/button/button.h"
-#include "esphome/components/cc1101/CC1101_ESP_Arduino/CC1101_ESP_Arduino.h"
+#include "CC1101_ESP_Arduino/CC1101_ESP_Arduino.h"
 
 namespace esphome {
 namespace cc1101 {
