@@ -19,7 +19,7 @@
 #define CC1101_ESP_ARDUINO_h
 
 #include <Arduino.h>
-#include <SPI.h>
+#include "esphome/components/spi/spi.h"
 #include <limits.h>
 
 
