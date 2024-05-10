@@ -7,7 +7,7 @@ CONF_TARGET_MAC_ADDRESS = "target_mac_address"
 
 test_ns = cg.esphome_ns.namespace("test")
 
-TestButton = test_ns.class_("testButton", button.Button, cg.Component)
+TestButton = test_ns.class_("TestButton", button.Button, cg.Component)
 
 #DEPENDENCIES = ["network"]
 
