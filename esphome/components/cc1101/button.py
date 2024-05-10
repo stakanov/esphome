@@ -23,7 +23,6 @@ CC1101Button = cc1101_ns.class_("CC1101Button", button.Button, cg.Component)
 
 # DEPENDENCIES = []
 
-
 CONFIG_SCHEMA = cv.All(
     button.button_schema(CC1101Button)
     .extend(cv.COMPONENT_SCHEMA)
@@ -36,11 +35,11 @@ CONFIG_SCHEMA = cv.All(
                 cv.Required(CONF_GPIO_CS   ): cv.int_,
                 cv.Required(CONF_GPIO_GDO0 ): cv.int_,
                 cv.Required(CONF_GPIO_GDO2 ): cv.int_,
-                cv.Required(CONF_BITRATE   ): cv.uint8_t,
+                cv.Required(CONF_BITRATE   ): cv.int_,
                 cv.Required(CONF_FREQUENCY ): cv.float_,
-                cv.Required(CONF_TX_POWER  ): cv.int_,
+                cv.Required(CONF_TX_POWER  ): cv.string,       
                 cv.Required(CONF_DATARATE  ): cv.float_,
-                cv.Required(CONF_MODULATION): cv.int_,
+                cv.Required(CONF_MODULATION): cv.string,
                 cv.Required(CONF_REPEAT    ): cv.int_,
             }
         ),

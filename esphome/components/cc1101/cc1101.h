@@ -10,7 +10,7 @@ namespace cc1101 {
 class CC1101Button : public button::Button, public Component {
  public:
   
-  void set_module(int sclk, int miso, int mosi, int cs, int gdo0, int gdo2, uint32_t bitrate, float frequency, TX_DBM txPower, unsigned long dataRate, MOD_FORMAT modulation, int repeat /*, int delayTime , uint8_t buffer[]*/){};
+  void set_module(int sclk, int miso, int mosi, int cs, int gdo0, int gdo2, int bitrate, float frequency, TX_DBM txPower, unsigned long dataRate, MOD_FORMAT modulation, int repeat /*, int delayTime , uint8_t buffer[]*/){};
 
   void dump_config() override;
 
@@ -23,7 +23,7 @@ class CC1101Button : public button::Button, public Component {
   int gpio_cs;
   int gpio_gdo0;
   int gpio_gdo2;
-  uint32_t bitrate;
+  int bitrate;
   float frequency;
   TX_DBM txPower;
   unsigned long dataRate;

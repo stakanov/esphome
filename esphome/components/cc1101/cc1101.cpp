@@ -15,7 +15,7 @@ unsigned long 	dataRate;
 MOD_FORMAT 		modulation;
 //uint8_t			buffer[];
 
-void CC1101Button::set_module(int sclk, int miso, int mosi, int cs, int gdo0, int gdo2, uint32_t bitrate, float frequency, TX_DBM txPower, unsigned long dataRate, MOD_FORMAT modulation, int repeat  /*, int delayTime, uint8_t buffer[]*/){
+void CC1101Button::set_module(int sclk, int miso, int mosi, int cs, int gdo0, int gdo2, int bitrate, float frequency, TX_DBM txPower, unsigned long dataRate, MOD_FORMAT modulation, int repeat  /*, int delayTime, uint8_t buffer[]*/){
 	//SPI_SCK 			= sclk;	//board or mcu specific
 	//SPI_MISO 			= miso; //board or mcu specific
 	//SPI_MOSI 			= mosi; //board or mcu specific
