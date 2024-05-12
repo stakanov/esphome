@@ -13,11 +13,11 @@ static const uint8_t MOSI_PIN = 23;
 static const uint8_t CS_PIN = 5;
 
 void CC1101::setup() {
-  SPI.pins(SCK_PIN, MISO_PIN, MOSI_PIN, CS_PIN);
+  ESP_LOGI(TAG, "Setup...");
 }
 
 void CC1101::dump_config() { 
-    LOG_BUTTON("", "CC1101 Button", this); 
+  LOG_BUTTON("", "Dump config...", this); 
 }
 
 void CC1101::press_action() {
