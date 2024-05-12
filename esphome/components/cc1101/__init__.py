@@ -3,7 +3,7 @@ import esphome.config_validation as cv
 from esphome.components import spi
 from esphome.const import (CONF_ID)
 
-DEPENDENCIES = ["spi"]
+DEPENDENCIES = ["spi","button"]
 
 cc1101_ns = cg.esphome_ns.namespace("cc1101")
 CC1101 = cc1101_ns.class_("CC1101", cg.Component, spi.SPIDevice)
