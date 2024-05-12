@@ -1,0 +1,60 @@
+# Global variables
+substitutions:
+  device_name: "External-RF"
+  device_slug: "external-rf"
+  #update_interval: 60s
+
+# Main
+esphome:
+  name: ${device_slug}
+  friendly_name: ${device_name}
+  includes:
+  libraries:
+
+# Platform/Board
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+external_components:
+  # use rtttl and dfplayer from ESPHome's dev branch in GitHub
+  - source:
+      type: git
+      url: https://github.com/stakanov/esphome
+    components: [ cc1101, spi ]
+    refresh: 1s
+
+# Enable logging
+logger:
+
+# Enable OTA
+ota:
+  password: !secret ota_password
+
+# Enable WiFi / AP fallback / captive portal
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+  fast_connect: true
+  power_save_mode: HIGH
+  ap:
+    ssid: ${device_name} Fallback
+    password: !secret ap_password
+captive_portal:
+
+# Enable web server
+web_server:
+  port: 80
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "UlzrrKSedVPbpaVwWkgtu45ftuHcH4l6a3o854jygeQ="
+
+################################################################################
+# MODULE CONFIGURATION
+################################################################################
+
+################################################################################
+
