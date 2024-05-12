@@ -5,7 +5,7 @@
 namespace esphome {
 namespace cc1101 {
 
-static const char *const TAG = "cc1101.button";
+static const char *const TAG = "cc1101";
 
 static const uint8_t SCK_PIN = 18;
 static const uint8_t MISO_PIN = 19;
