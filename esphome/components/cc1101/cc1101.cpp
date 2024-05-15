@@ -10,8 +10,8 @@ void CC1101::setup() {
   ESP_LOGI(TAG, "Setup...");
 }
 
-void CC1101::setup() {
-  ESP_LOGI(TAG, "Setup...");
+void CC1101::loop() {
+  ESP_LOGI(TAG, "Inside the LOOP...");
 }
 
 void CC1101::dump_config() { 
