@@ -11,7 +11,7 @@ void CC1101::setup() {
 }
 
 void CC1101::loop() {
-  ESP_LOGI(TAG, "Inside the LOOP...");
+  //ESP_LOGI(TAG, "Inside the LOOP...");
 }
 
 void CC1101::dump_config() { 
