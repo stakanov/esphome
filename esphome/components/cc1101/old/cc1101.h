@@ -17,13 +17,13 @@ class CC1101Button : public button::Button, public Component {
  protected:
   void press_action() override;
 
-  int gpio_sclk;
-  int gpio_miso;
-  int gpio_mosi;
-  int gpio_cs;
-  int gpio_gdo0;
-  int gpio_gdo2;
-  int bitrate;
+  int gpio_sclk;              // definito in componente SPI
+  int gpio_miso;              // definito in componente SPI
+  int gpio_mosi;              // definito in componente SPI
+  int gpio_cs;                // definito in componente CC1101
+  int gpio_gdo0;              // non definito
+  int gpio_gdo2;              // non definito
+  int bitrate;                
   float frequency;
   TX_DBM txPower;
   unsigned long dataRate;
